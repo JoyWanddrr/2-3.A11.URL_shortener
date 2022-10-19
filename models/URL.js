@@ -1,7 +1,10 @@
 const mongoose = require('mongoose')
 const urlSchema = new mongoose.Schema(
   {
-    url: String,
+    url: {
+      type: url,
+      required: true
+    }
   })
 
 module.exports = mongoose.model('Url-List', urlSchema)
