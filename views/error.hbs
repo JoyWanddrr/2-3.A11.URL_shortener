@@ -1,15 +1,28 @@
+{{!-- 重複的shortUrl --}}
+{{#if errorShort}}
 <div class="m-4">
   <h3>Oops! This URL has been shortened already!</h3>
   <div class="your-input">
-    <p class="ml-3">YOUR LINK:
+    <p class="ml-3">This shortURL has been used, please try again:
+    <p class="fw-bold">{{errorShort}}</p>
+    </p>
+  </div>
+</div>
+{{else}}
+{{!-- 已轉換過的url --}}
+<div class="m-4">
+  <h3>Oops! This URL has been shortened already!</h3>
+  <div class="your-input">
+    <p class="ml-3">Your link:
     <p class="fw-bold">{{inputUrl}}</p>
     </p>
   </div>
   <div class="data-save">
     <p class="ml-3">Here is your shorten URL:
     <p class="fw-bold">
-      {{shortenUrl}}
+      <a href="{{inputUrl}}" target="_blank" id="outputUrl">{{hostUrl}}/{{shortUrl}}</a>
     </p>
     </p>
   </div>
 </div>
+{{/if}}

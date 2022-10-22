@@ -12,6 +12,3 @@ db.once('open', () => {
 
 })
 
-
-// 自建模組
-module.exports = db

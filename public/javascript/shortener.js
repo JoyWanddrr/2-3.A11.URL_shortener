@@ -13,5 +13,6 @@ function shortener(num) {
   return randomNums
 }
 
+
+
 module.exports = shortener
-// 將接收的網址截取並且複製

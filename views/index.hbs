@@ -1,19 +1,32 @@
-<div class="container d-flex justify-content-center">
-  <div class="contain d-flex flex-column justify-content-center ">
+{{#if shortUrl}}
 
-    <div class="d-flex flex-column justify-content-center ">
-      <div class="img align-self-center">
-        <h3 class="fw-bold text-center">URL SHORTENER</h3>
-        <img class=" m-5 p-5" src="/images/ExportedContentImage_00.png" alt="link">
-      </div>
-      <form class="address" action="/renew" method="POST">
-        {{!-- 輸入網址 --}}
-        <div class="input-group mb-3 ">
-          <input type="URL" class="form-control" placeholder="Input URL here" aria-label="Input URL here"
-            aria-describedby="button-addon2" id="input-url" name="url">
-          <button class="btn btn-outline-secondary" type="submit" id="button2">Shortener</button>
-        </div>
-      </form>
-    </div>
-  </div>
+<h3>Susses! Please use this link :</h3>
+<div class="d-flex flex-column align-items-center">
+  <p class="ms-4" id="text">
+    {{!-- 放入輸出的網址 --}}
+    <a href="{{inputUrl}}" target="_blank" class="fs-3" id="outputUrl">{{hostUrl}}/{{shortUrl}}</a>
+  </p>
+  {{!-- 一鍵複製 --}}
+  <button class="btn btn-primary ms-4" type="submit" id="btn-copy" onclick="copy()">Copy</button>
 </div>
+</div>
+{{else}}
+<form class=" address" action="/" method="POST">
+  {{!-- 輸入網址 --}}
+  <div class="input-group mb-3 ">
+    <input type="url" class="form-control" placeholder="Input URL here" aria-label="Input URL here"
+      aria-describedby="button-addon2" id="input-url" name="url" required>
+    {{!--required: 若使用者沒有輸入內容，就按下了送出鈕，需要防止表單送出並提示使用者 --}}
+    <button class="btn btn-outline-secondary" type="submit" id="button2">Shortener</button>
+  </div>
+</form>
+
+
+{{/if}}
+<script>
+  function copy() {
+    const url = document.querySelector('#outputUrl')
+    navigator.clipboard.writeText(url.textContent)
+    alert('copy success!')
+  }
+</script>
