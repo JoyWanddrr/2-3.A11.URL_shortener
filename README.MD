@@ -8,12 +8,12 @@
 
 ## 首頁瀏覽
 
-![Url shortener](./public/images/Url Shortener.jpg "Url shortener Index image.")
+![](./public/images/Url%20Shortener.jpg"Url shortener Index image.")
 
 ## 功能瀏覽
-![Url shortener](./public/images/Url Shortener-transfer.jpg "Url shortener Transfer image.")
-!(./public/images/Url Shortener-repeated.jpg "Url shortener Repeated image.")
-!(./public/images/Url Shortener-copy.jpg "Url shortener Copy image.")
+![Url shortener](./public/images/Url%20Shortener-transfer.jpg "Url shortener Transfer image.")
+![](./public/images/Url%20Shortener-repeated.jpg "Url shortener Repeated image.")
+![](./public/images/Url%20Shortener-copy.jpg "Url shortener Copy image.")
 
 ## 環境建置與需求 
 * npm 
