@@ -13,6 +13,7 @@ require('./config/mongoose')
 // body-parser
 app.use(express.urlencoded({ extended: true }))
 
+
 // routes setting
 app.use(routes)
 // 啟動

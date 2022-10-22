@@ -1,7 +1,7 @@
 const db = require('./../../config/mongoose')
 
 // 載入 restaurant model
-const url = require('../URL')
+const url = require('../url')
 
 // export的db用在這裡。
 db.once('open', () => {

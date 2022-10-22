@@ -1,18 +1,19 @@
 <div class="container d-flex justify-content-center">
   <div class="contain d-flex flex-column justify-content-center ">
 
-    <div class="img align-self-center">
-      <h3 class="fw-bold text-center">URL SHORTENER</h3>
-      {{!-- 首圖 --}}
-      <img class=" m-5 p-5" src="/images/ExportedContentImage_00.png" alt="link">
-    </div>
-    <form class="address" action="/renew" method="POST">
-      {{!-- 輸入網址 --}}
-      <div class="input-group mb-3 ">
-        <input type="URL" class="form-control" placeholder="Input URL here" aria-label="Input URL here"
-          aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Shortener</button>
+    <div class="d-flex flex-column justify-content-center ">
+      <div class="img align-self-center">
+        <h3 class="fw-bold text-center">URL SHORTENER</h3>
+        <img class=" m-5 p-5" src="/images/ExportedContentImage_00.png" alt="link">
       </div>
-    </form>
+      <form class="address" action="/renew" method="POST">
+        {{!-- 輸入網址 --}}
+        <div class="input-group mb-3 ">
+          <input type="URL" class="form-control" placeholder="Input URL here" aria-label="Input URL here"
+            aria-describedby="button-addon2" id="input-url" name="url">
+          <button class="btn btn-outline-secondary" type="submit" id="button2">Shortener</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
