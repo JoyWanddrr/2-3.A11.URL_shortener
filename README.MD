@@ -11,10 +11,14 @@
 ![](./public/images/Url%20Shortener.jpg "Url shortener Index  image.")
 
 ## 功能瀏覽
+
+SHORTENER
 ![Url shortener](./public/images/Url%20Shortener-transfer.jpg "Url shortener Transfer image.")
 
+URL REPEATED
 ![](./public/images/Url%20Shortener-repeated.jpg "Url shortener Repeated image.")
 
+COPY
 ![](./public/images/Url%20Shortener-copy.jpg "Url shortener Copy image.")
 
 ## 環境建置與需求 
