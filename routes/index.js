@@ -48,7 +48,6 @@ router.get('/:shortUrl', (req, res) => {
       // 比對成功，重新導向原始網頁
       if (data.length === 1) {
         res.redirect(data[0].originalUrl)
-        console.log(data)
       }
 
     })
