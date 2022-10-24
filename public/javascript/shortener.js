@@ -13,6 +13,15 @@ function shortener(num) {
   return randomNums
 }
 
+// function shortener(num) {
+//   const numbers = '123'
 
+//   let randomNums = ''
+//   for (let i = 0; i < num; i++) {
+//     const randomIndex = Math.floor(Math.random() * numbers.length)
+//     randomNums += numbers[randomIndex]
+//   }
+//   return randomNums
+// }
 
 module.exports = shortener

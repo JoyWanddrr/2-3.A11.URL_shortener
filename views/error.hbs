@@ -1,14 +1,4 @@
-{{!-- 重複的shortUrl --}}
-{{#if errorShort}}
-<div class="m-4">
-  <h3>Oops! This URL has been shortened already!</h3>
-  <div class="your-input">
-    <p class="ml-3">This shortURL has been used, please try again:
-    <p class="fw-bold">{{errorShort}}</p>
-    </p>
-  </div>
-</div>
-{{else}}
+{{#if shortUrl}}
 {{!-- 已轉換過的url --}}
 <div class="m-4">
   <h3>Oops! This URL has been shortened already!</h3>
@@ -20,9 +10,29 @@
   <div class="data-save">
     <p class="ml-3">Here is your shorten URL:
     <p class="fw-bold">
-      <a href="{{inputUrl}}" target="_blank" id="outputUrl">{{hostUrl}}/{{shortUrl}}</a>
+      <a href="{{hostUrl}}/{{shortUrl}}" target="_blank" id="outputUrl">{{hostUrl}}/{{shortUrl}}</a>
     </p>
     </p>
   </div>
 </div>
+
+{{else}}
+{{!-- 已被使用過的短網址，需重新輸入 --}}
+<div class="m-4">
+  <h3>This URL has been shortened already!</h3>
+  <div class="your-input">
+    <p class="ml-3">Please try again:
+    <form class=" address" action="/" method="POST">
+      {{!-- 輸入網址 --}}
+      <div class="input-group mb-3 ">
+        <input type="url" class="form-control" placeholder="Input URL here" aria-label="Input URL here"
+          aria-describedby="button-addon2" id="input-url" name="url" required>
+        {{!--required: 若使用者沒有輸入內容，就按下了送出鈕，需要防止表單送出並提示使用者 --}}
+        <button class="btn btn-outline-secondary" type="submit" id="button2">Shortener</button>
+      </div>
+    </form>
+    </p>
+  </div>
+</div>
+
 {{/if}}

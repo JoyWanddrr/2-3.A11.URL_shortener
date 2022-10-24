@@ -4,12 +4,13 @@
 <div class="d-flex flex-column align-items-center">
   <p class="ms-4" id="text">
     {{!-- 放入輸出的網址 --}}
-    <a href="{{inputUrl}}" target="_blank" class="fs-3" id="outputUrl">{{hostUrl}}/{{shortUrl}}</a>
+    <a href="{{hostUrl}}/{{shortUrl}}" target="_blank" class="fs-3" id="outputUrl">{{hostUrl}}/{{shortUrl}}</a>
   </p>
   {{!-- 一鍵複製 --}}
   <button class="btn btn-primary ms-4" type="submit" id="btn-copy" onclick="copy()">Copy</button>
 </div>
 </div>
+
 {{else}}
 <form class=" address" action="/" method="POST">
   {{!-- 輸入網址 --}}

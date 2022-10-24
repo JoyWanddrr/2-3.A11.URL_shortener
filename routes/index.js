@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
       else {
         Url.create({ originalUrl: inputUrl, shortUrl: shortener(5) })
           .then((urlData) =>
-            res.render('index', { shortUrl: urlData.shortUrl, inputUrl, hostUrl }))
+            res.render('index', { shortUrl: urlData.shortUrl, hostUrl }))
       }
     })
 
@@ -35,19 +35,25 @@ router.post('/', (req, res) => {
 })
 
 
-// 當不同網址卻產生重複的shortUrl，但是我測試會無法抓取重複的shortUrl。
-// router.get('/:shortUrl', (req, res) => {
-//   const shortUrl = req.params.shortURL
-//   Url.findOne({ shortUrl })
-//     .lean()
-//     .then(data => {
-//       // 找到重複
-//       if (data) {
-//          res.render('error',{errorShort:`{req.headers.host}\{shortUrl}`}) 
-//       }
-//     })
-//     .catch(err => console.log(err))
-// })
+// 點擊網址之後，找尋資料庫的轉換成原網址。
+router.get('/:shortUrl', (req, res) => {
+  const shortUrl = req.params.shortUrl
+  Url.find({ shortUrl })
+    .lean()
+    .then(data => {
+      // 比對失敗，重新輸入，原本想要在這裡改變刪除重複的shortUrl，結果一直無法成功。
+      if (data.length > 1) {
+        res.render('error')
+      }
+      // 比對成功，重新導向原始網頁
+      if (data.length === 1) {
+        res.redirect(data[0].originalUrl)
+        console.log(data)
+      }
 
+    })
+    .catch(err => console.log(err))
+
+})
 
 module.exports = router
